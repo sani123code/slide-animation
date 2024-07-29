@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            document.getElementById("navbar").style.padding = "1px 1px";
+            document.getElementByclassname("logo").style.fontSize = "25px";
+          } else {
+            document.getElementById("navbar").style.padding = "2px 5px";
+            document.getElementByclassname("logo").style.fontSize = "35px";
+          }
+        }
+        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #D2D2D2;
+            background-image:
+            repeating-linear-gradient(
+                to right, transparent 0 100px,
+                #25283b22 100px 101px
+            ),
+            repeating-linear-gradient(
+                to bottom, transparent 0 100px,
+                #25283b22 100px 101px
+            );
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            background-image: url(images/bg.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #navbar {
+  overflow: hidden;
+ 
+  padding:2px 02px;
+  transition: 0.4s;
+  position: fixed;
+  width: 25%;
+  top: 0;
+  z-index: 99;
+  background-blend-mode: overlay;
+}
+
+#navbar a {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 10px;
+  border-radius: 4px;
+  background-blend-mode: overlay;
+}
+
+#navbar .logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+  background-blend-mode: overlay;
+}
+
+#navbar a:hover {
+    background-blend-mode: overlay;
+  color: black;
+}
+
+#navbar a:active {
+  background-color: rgb(20, 104, 187);
+ 
+}
+#content {
+color:aliceblue;
+word-spacing:6px;
+left:63px;
+top:3px;
+position: absolute;
+font-size: 13px;
+
+}
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 0px 10px !important;
+    background-blend-mode: overlay;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+    background-blend-mode: overlay;
+  }
+  #navbar-right {
+    float: none;
+    background-blend-mode: overlay;
+  }
+}
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+
+
+<body>
+    
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><a href="#" target="_self"><img src="image1.jfif" alt=""></a></div>
+            <div class="item" style="--position: 2"><img src="image2.jfif"  alt=""></div>
+            <div class="item" style="--position: 3"><img src="image3.jfif"  alt=""></div>
+            <div class="item" style="--position: 4"><img src="image4.jfif"  alt=""></div>
+            <div class="item" style="--position: 5"><img src="image5.jfif"  alt=""></div>
+            <div class="item" style="--position: 6"><img src="image6.jfif"  alt=""></div>
+            <div class="item" style="--position: 7"><img src="image7.jfif"  alt=""></div>
+            <div class="item" style="--position: 8"><img src="image8.jfif"  alt=""></div>
+            <div class="item" style="--position: 9"><img src="image9.jfif"  alt=""></div>
+            <div class="item" style="--position: 10"><img src="image10.jfif"  alt=""></div>
+        </div>
+        </div>
+        <div class="content">
+           
+            <div class="author">
+               <div id="navbar"><a href="#" id="logo">S A N I</a></div>
+                <p><b id="content">FRONTEND</b></p>
+            </div>
+        <div class="model"></div>
+        </div>
+        
+
+    
+</body>
+</html>

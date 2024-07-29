@@ -1,0 +1,165 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+body{
+    background-color: black;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 150px;
+    height: 160px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-13deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotatex(-13deg) rotateY(360deg);
+    }
+}
+.banner .slider:active{
+    animation-play-state:paused;
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 16) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: 100%;
+    padding-bottom: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between 20%;
+    align-items: center;
+    z-index: 1;
+}
+ .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+ .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+
+}
+ .content .author{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+.author{
+    position:sticky ;
+  
+}
+ .content h2{
+    font-size: 3em;
+}
+.banner  {
+    
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -58px;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+    background-blend-mode:luminosity;
+}
+.content .model {
+    /* The image used */
+    background-image: url("model.jpg");
+  
+    /* Set a specific height */
+    min-height: 2000px; 
+     height:75%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position:  bottom center;
+    background-repeat: no-repeat;
+    background-size:auto 75%;
+   mix-blend-mode:screen;
+ 
+  }
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .slider .item{
+        transform: 
+            rotateX(calc( (var(--position) - 16) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #ffffff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 16) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 5em;
+    }
+}
+html{
+    scroll-behavior: smooth;
+    
+height:3000px;
+}
